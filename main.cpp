@@ -21,14 +21,16 @@ service (which may then retain a copy of this assignment on its
 database for the purpose of future plagiarism checking)
 
 */
-#include <iostream>
-#include <iomanip> // setw(), precision()
-#include <fstream>
-#include <regex> // "regex" object,
-
+#include "bankmate.hpp"
 
 
 int main()
 {
+  const std::string TELLER_FILE_PATH = "data/tellers.dat";
+
+  std::vector<std::string> tellerUsernames,
+                           tellerPasswords;
+  fillTellerArrays(tellerUsernames, tellerPasswords);
+  
   return 0;
 }
