@@ -24,9 +24,9 @@ database for the purpose of future plagiarism checking)
 #include "bankmate.hpp"
 
 /***   Author: Miles Regal
-   *  Purpose:  print a list of strings to stdout, with each element in the array given as their own line-seperated list item,
+   *  Purpose:  print a list of strings to stdout, with each element in the vector given as their own line-seperated list item,
    *            with the first list item number equal to argument start, for adding to an already-made list of text
-   *      Pre:  1. a c-style array containing the string list items to be printed
+   *      Pre:  1. a vector array containing the string list items to be printed
    *            2. the first list item number
    *     Post:  N/A
    *************************************************************************/
@@ -36,6 +36,13 @@ void printOrderedList(std::vector<std::string> list, int start)
     std::cout << start + i << ". " << list[i] << std::endl;
 }
 
+/***   Author: Miles Regal
+   *  Purpose:  fills the 2 vector array reference arguments (will always pass the arrays) with data from tellers.dat, so we only have to read from that file once
+   *            with the first list item number equal to argument start, for adding to an already-made list of text
+   *      Pre:  1. reference to vector array that we will fill with usernames from the file
+   *            2. reference to vector array that we will fill with passwords from the file
+   *     Post:  N/A
+   *************************************************************************/
 void fillTellerArrays(std::vector<std::string> &tellerUsernames, std::vector<std::string> &tellerPasswords)
 {
   std::string tellerUsername,
